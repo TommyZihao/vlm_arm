@@ -1,6 +1,6 @@
 # 机械臂+大模型+多模态=人机协作具身智能体
 
-![架构图](https://github.com/TommyZihao/vlm_arm/assets/36354458/8790f65c-4612-44df-afef-8131df35d137)
+![架构图](https://github.com/TommyZihao/vlm_arm/assets/36354458/c1eacaaa-f895-4a27-b736-f314fe7cb1f2)
 
 目标：听得懂人话、看得懂图像、拎得清动作
 

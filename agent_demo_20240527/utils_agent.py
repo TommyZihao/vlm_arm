@@ -9,7 +9,7 @@ AGENT_SYS_PROMPT = '''
 
 【以下是所有内置函数介绍】
 机械臂位置归零，所有关节回到原点：back_zero()
-放松机械臂，所有关节都可以自由手动拖拽活动：back_zero()
+放松机械臂，所有关节都可以自由手动拖拽活动：relax_arms()
 做出摇头动作：head_shake()
 做出点头动作：head_nod()
 做出跳舞动作：head_dance()

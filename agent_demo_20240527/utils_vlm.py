@@ -3,6 +3,7 @@
 # 多模态大模型、可视化
 
 print('导入视觉大模型模块')
+import time
 import cv2
 import numpy as np
 from PIL import Image
@@ -133,6 +134,9 @@ def post_processing_viz(result, img_path, check=False):
     img_bgr = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR) # RGB转BGR
     # 保存可视化效果图
     cv2.imwrite('temp/vl_now_viz.jpg', img_bgr)
+
+    formatted_time = time.strftime("%Y%m%d%H%M", time.localtime())
+    cv2.imwrite('visualizations/{}.jpg'.format(formatted_time), img_bgr)
 
     # 在屏幕上展示可视化效果图
     cv2.imshow('zihao_vlm', img_bgr) 

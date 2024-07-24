@@ -166,7 +166,7 @@ def pump_move(mc, XY_START=[230,-50], HEIGHT_START=90, XY_END=[100,220], HEIGHT_
 
     mc：机械臂实例
     XY_START：起点机械臂坐标
-    HEIGHT_START：起点高度
+    HEIGHT_START：起点高度，方块用90，药盒子用70
     XY_END：终点机械臂坐标
     HEIGHT_END：终点高度
     HEIGHT_SAFE：搬运途中安全高度

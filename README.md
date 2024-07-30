@@ -2,7 +2,7 @@
 
 作者：同济子豪兄
 
-## 视频
+## 相关视频
 
 机械臂接入GPT4o大模型，秒变多模态AI贾维斯：https://www.bilibili.com/video/BV18w4m1U7Fi
 
@@ -11,6 +11,8 @@
 同济子豪兄亚马逊中国峰会演讲：多模态生成式AI的N种玩法：https://www.bilibili.com/video/BV1Pi421U7D6
 
 首发实测！百度文心大模型4.0 Turbo接入机械臂智能体：https://www.bilibili.com/video/BV16M4m1m7Z1
+
+【通义灵码】AI帮我啃祖传代码是什么体验？：https://www.bilibili.com/video/BV1Qz421i7Nd
 
 ## 原理
 
@@ -39,5 +41,21 @@
 - 需要安装配置python3.12环境及所需工具包
 - 需要把API_KEY.py中的KEY换成你自己的KEY
 - 需要确认麦克风ID和扬声器设备
+
+## 特别感谢
+
+零一万物 马诺
+
+大象机器人售后技术支持团队
+
+恒之未来 宋佩恒
+
+能源算力融合（哈密）研究院算力与计算服务研究所 杨耀东
+
+上海人工智能实验室 李佳伦
+
+华中科技大学网络空间安全学院TAI团队 章航韬
+
+渭南师范学院 田文博
 
 

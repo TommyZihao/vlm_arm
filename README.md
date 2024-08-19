@@ -42,7 +42,7 @@
 
 开机教程：https://njapov1vnz.feishu.cn/docx/SJQXdIWfUo85HjxXyEBc0Wpfnqc?from=from_copylink
 
-- 需要安装配置python3.12环境及所需工具包
+- 需要安装Python 3.12及所需工具包
 - 需要把API_KEY.py中的KEY换成你自己的KEY
 - 需要确认麦克风ID和扬声器设备
 - 需要确认摄像头和语音正常

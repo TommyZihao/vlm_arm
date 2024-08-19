@@ -14,6 +14,8 @@
 
 【通义灵码】AI帮我啃祖传代码是什么体验？：https://www.bilibili.com/video/BV1Qz421i7Nd
 
+我的抓药机械臂做了一个违背祖宗的决定：https://www.bilibili.com/video/BV1yr421K7Qs
+
 ## 原理
 
 ![原理图1-压缩](https://github.com/user-attachments/assets/82dea292-59fb-4c0d-b5df-91b346267e6c)

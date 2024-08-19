@@ -16,6 +16,8 @@
 
 我的抓药机械臂做了一个违背祖宗的决定：https://www.bilibili.com/video/BV1yr421K7Qs
 
+耗时六个月，我造出了《三体》中机器人刺杀罗辑的KILLER病毒：https://www.bilibili.com/video/BV1Wm42137kR
+
 ## 原理
 
 ![原理图1-压缩](https://github.com/user-attachments/assets/82dea292-59fb-4c0d-b5df-91b346267e6c)

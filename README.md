@@ -2,6 +2,8 @@
 
 作者：同济子豪兄
 
+![封面3](https://github.com/user-attachments/assets/dc014f7b-6bcb-4e3d-9525-4097f2a6bf09)
+
 ## 相关视频
 
 机械臂接入GPT4o大模型，秒变多模态AI贾维斯：https://www.bilibili.com/video/BV18w4m1U7Fi

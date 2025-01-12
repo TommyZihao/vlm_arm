@@ -50,7 +50,8 @@ def vlm_move(PROMPT='帮我把绿色方块放在小猪佩奇上', input_way='key
     while n < 5:
         try:
             print('    尝试第 {} 次访问多模态大模型'.format(n))
-            result = yi_vision_api(PROMPT, img_path='temp/vl_now.jpg')
+            # result = yi_vision_api(PROMPT, img_path='temp/vl_now.jpg')  # yi_vision定位能力出现波动，暂时换用QwenVL系列
+            result = QwenVL_api(PROMPT, img_path='temp/vl_now.jpg')
             print('    多模态大模型调用成功！')
             print(result)
             break

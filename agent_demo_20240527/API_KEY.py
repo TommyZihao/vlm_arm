@@ -2,9 +2,15 @@
 # 同济子豪兄 2024-5-22
 # 各种开放平台的KEY，不要外传
 
+# 通义千问QwenVL系列
+# https://bailian.console.aliyun.com/#/model-market
+Qwen_KEY = "f8144ffaff7c459791XXXXXXXXX"
+
+
 # 零一万物大模型开放平台
 # https://platform.lingyiwanwu.com
 YI_KEY = "f8144ffaff7c459791XXXXXXXXX"
+
 
 # 百度智能云千帆ModelBuilder
 # https://qianfan.cloud.baidu.com

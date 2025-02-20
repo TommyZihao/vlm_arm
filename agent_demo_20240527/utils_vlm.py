@@ -95,7 +95,7 @@ def QwenVL_api(PROMPT='帮我把红色方块放在钢笔上', img_path='temp/vl_
 
     # 向大模型发起请求
     completion = client.chat.completions.create(
-        model="qwen-vl-max-latest",
+        model="qwen-vl-max-2024-11-19",
         messages=[
             {
                 "role": "user",

@@ -1,0 +1,14 @@
+# Python >= 3.10 required
+numpy==1.26.4
+opencv-python
+appbuilder-sdk
+Pillow
+qianfan
+pyaudio      # Linux需先执行: sudo apt-get install portaudio19-dev
+pybind11==2.11.0
+pybind11-global==2.11.0  # 需确保与pybind11主包版本一致
+plyfile
+open3d
+openai
+redis
+sounddevice

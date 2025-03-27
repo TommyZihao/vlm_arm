@@ -2,13 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ebbd89c-d5f9-43d8-97e8-8fc30ce68e0a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/API_KEY.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/API_KEY.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/agent_go.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/agent_go.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_llm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm_move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/API_KEY.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/README.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/agent_go.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/asset/SimHei.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/asset/welcome.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/camera_check.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/sound_check.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/temp/record.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/temp/speech_record.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/temp/tts.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/temp/vl_now.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/temp/vl_now_viz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_agent.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_asr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_camera.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_drag_teaching.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_led.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_llm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_pump.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_robot.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_tts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm_move.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/visualizations/202407242109.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/visualizations/202407242204.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/visualizations/202407242245.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +76,9 @@
       <workItem from="1743075304467" duration="8000" />
       <workItem from="1743075315000" duration="30000" />
       <workItem from="1743075350559" duration="79000" />
+      <workItem from="1743075483932" duration="1000" />
+      <workItem from="1743075595767" duration="9000" />
+      <workItem from="1743075610331" duration="1000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ebbd89c-d5f9-43d8-97e8-8fc30ce68e0a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/API_KEY.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/API_KEY.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/agent_go.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/agent_go.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_llm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm_move.py" beforeDir="false" afterPath="$PROJECT_DIR$/agent_demo_20240527/utils_vlm_move.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,22 +18,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2tJ3Yw4iBiV6phZOanO0UR0pQ1U" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -45,6 +51,10 @@
       <option name="presentableId" value="Default" />
       <updated>1740056400925</updated>
       <workItem from="1740056402389" duration="175000" />
+      <workItem from="1743075231635" duration="40000" />
+      <workItem from="1743075304467" duration="8000" />
+      <workItem from="1743075315000" duration="30000" />
+      <workItem from="1743075350559" duration="79000" />
     </task>
     <servers />
   </component>

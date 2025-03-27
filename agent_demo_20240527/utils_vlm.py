@@ -8,13 +8,16 @@ import cv2
 import numpy as np
 from PIL import Image
 from PIL import ImageFont, ImageDraw
+
 # 导入中文字体，指定字号
 font = ImageFont.truetype('asset/SimHei.ttf', 26)
 
 from API_KEY import *
+from utils_tts import *
 
+OUTPUT_VLM = ''
 # 系统提示词
-SYSTEM_PROMPT = '''
+SYSTEM_PROMPT_CATCH = '''
 我即将说一句给机械臂的指令，你帮我从这句话中提取出起始物体和终止物体，并从这张图中分别找到这两个物体左上角和右下角的像素坐标，输出json数据结构。
 
 例如，如果我的指令是：请帮我把红色方块放在房子简笔画上。
@@ -31,58 +34,84 @@ SYSTEM_PROMPT = '''
 我现在的指令是：
 '''
 
+SYSTEM_PROMPT_VQA = '''
+告诉我图片中每个物体的名称、类别和作用。每个物体用一句话描述。
+
+例如：
+连花清瘟胶囊，药品，治疗感冒。
+盘子，生活物品，盛放东西。
+氯雷他定片，药品，治疗抗过敏。
+
+我现在的指令是：
+'''
+
 # Yi-Vision调用函数
 import openai
 from openai import OpenAI
 import base64
-def yi_vision_api(PROMPT='帮我把红色方块放在钢笔上', img_path='temp/vl_now.jpg'):
 
+
+def yi_vision_api(PROMPT='帮我把红色方块放在钢笔上', img_path='temp/vl_now.jpg', vlm_option=0):
     '''
     零一万物大模型开放平台，yi-vision视觉语言多模态大模型API
     '''
-    
+    if vlm_option == 0:
+        SYSTEM_PROMPT = SYSTEM_PROMPT_CATCH
+    elif vlm_option == 1:
+        SYSTEM_PROMPT = SYSTEM_PROMPT_VQA
+
     client = OpenAI(
         api_key=YI_KEY,
         base_url="https://api.lingyiwanwu.com/v1"
     )
-    
+
     # 编码为base64数据
     with open(img_path, 'rb') as image_file:
         image = 'data:image/jpeg;base64,' + base64.b64encode(image_file.read()).decode('utf-8')
-    
+
     # 向大模型发起请求
     completion = client.chat.completions.create(
-      model="yi-vision",
-      messages=[
-        {
-          "role": "user",
-          "content": [
+        model="yi-vision",
+        messages=[
             {
-              "type": "text",
-              "text": SYSTEM_PROMPT + PROMPT
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": SYSTEM_PROMPT + PROMPT
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": image
+                        }
+                    }
+                ]
             },
-            {
-              "type": "image_url",
-              "image_url": {
-                "url": image
-              }
-            }
-          ]
-        },
-      ]
+        ]
     )
-    
+
     # 解析大模型返回结果
-    result = eval(completion.choices[0].message.content.strip())
+    if vlm_option == 0:  # 定位任务
+        result = eval(completion.choices[0].message.content.strip())
+    elif vlm_option == 1:  # 视觉问答任务
+        result = completion.choices[0].message.content.strip()
+        print(result)
+        tts(result)  # 语音合成，导出wav音频文件
+        play_wav('temp/tts.wav')  # 播放语音合成音频文件S
     print('    大模型调用成功！')
-    
+
     return result
 
 
-def QwenVL_api(PROMPT='帮我把红色方块放在钢笔上', img_path='temp/vl_now.jpg'):
+def QwenVL_api(PROMPT='帮我把红色方块放在钢笔上', img_path='temp/vl_now.jpg', vlm_option=0):
     '''
     通义千问QwenVL视觉语言多模态大模型API，模型列表请见：https://help.aliyun.com/zh/model-studio/getting-started/models?spm=0.0.0.i3#9f8890ce29g5u
     '''
+    if vlm_option == 0:
+        SYSTEM_PROMPT = SYSTEM_PROMPT_CATCH
+    elif vlm_option == 1:
+        SYSTEM_PROMPT = SYSTEM_PROMPT_VQA
 
     client = OpenAI(
         api_key=Qwen_KEY,
@@ -116,13 +145,19 @@ def QwenVL_api(PROMPT='帮我把红色方块放在钢笔上', img_path='temp/vl_
     )
 
     # 解析大模型返回结果
-    result = eval(completion.choices[0].message.content.strip())
+    if vlm_option == 0:  # 定位任务
+        result = eval(completion.choices[0].message.content.strip())
+    elif vlm_option == 1:  # 视觉问答任务
+        result = completion.choices[0].message.content.strip()
+        print(result)
+        tts(result)  # 语音合成，导出wav音频文件
+        play_wav('temp/tts.wav')  # 播放语音合成音频文件S
     print('    大模型调用成功！')
 
     return result
 
+
 def post_processing_viz(result, img_path, check=False):
-    
     '''
     视觉大模型输出结果后处理和可视化
     check：是否需要人工看屏幕确认可视化成功，按键继续或退出
@@ -156,7 +191,7 @@ def post_processing_viz(result, img_path, check=False):
     # 终点，中心点像素坐标
     END_X_CENTER = int((END_X_MIN + END_X_MAX) / 2)
     END_Y_CENTER = int((END_Y_MIN + END_Y_MAX) / 2)
-    
+
     # 可视化
     # 画起点物体框
     img_bgr = cv2.rectangle(img_bgr, (START_X_MIN, START_Y_MIN), (START_X_MAX, START_Y_MAX), [0, 0, 255], thickness=3)
@@ -167,14 +202,14 @@ def post_processing_viz(result, img_path, check=False):
     # 画终点中心点
     img_bgr = cv2.circle(img_bgr, [END_X_CENTER, END_Y_CENTER], 6, [255, 0, 0], thickness=-1)
     # 写中文物体名称
-    img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB) # BGR 转 RGB
-    img_pil = Image.fromarray(img_rgb) # array 转 pil
+    img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)  # BGR 转 RGB
+    img_pil = Image.fromarray(img_rgb)  # array 转 pil
     draw = ImageDraw.Draw(img_pil)
     # 写起点物体中文名称
-    draw.text((START_X_MIN, START_Y_MIN-32), START_NAME, font=font, fill=(255, 0, 0, 1)) # 文字坐标，中文字符串，字体，rgba颜色
+    draw.text((START_X_MIN, START_Y_MIN - 32), START_NAME, font=font, fill=(255, 0, 0, 1))  # 文字坐标，中文字符串，字体，rgba颜色
     # 写终点物体中文名称
-    draw.text((END_X_MIN, END_Y_MIN-32), END_NAME, font=font, fill=(0, 0, 255, 1)) # 文字坐标，中文字符串，字体，rgba颜色
-    img_bgr = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR) # RGB转BGR
+    draw.text((END_X_MIN, END_Y_MIN - 32), END_NAME, font=font, fill=(0, 0, 255, 1))  # 文字坐标，中文字符串，字体，rgba颜色
+    img_bgr = cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)  # RGB转BGR
     # 保存可视化效果图
     cv2.imwrite('temp/vl_now_viz.jpg', img_bgr)
 
@@ -182,17 +217,17 @@ def post_processing_viz(result, img_path, check=False):
     cv2.imwrite('visualizations/{}.jpg'.format(formatted_time), img_bgr)
 
     # 在屏幕上展示可视化效果图
-    cv2.imshow('zihao_vlm', img_bgr) 
+    cv2.imshow('zihao_vlm', img_bgr)
 
     if check:
         print('    请确认可视化成功，按c键继续，按q键退出')
-        while(True):
+        while (True):
             key = cv2.waitKey(10) & 0xFF
-            if key == ord('c'): # 按c键继续
+            if key == ord('c'):  # 按c键继续
                 break
-            if key == ord('q'): # 按q键退出
+            if key == ord('q'):  # 按q键退出
                 # exit()
-                cv2.destroyAllWindows()   # 关闭所有opencv窗口
+                cv2.destroyAllWindows()  # 关闭所有opencv窗口
                 raise NameError('按q退出')
     else:
         if cv2.waitKey(1) & 0xFF == None:
